@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\public",
+    "\\public\\Images",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\data",
+    "\\src\\components\\store"
+  ],
+  "SelectedNode": "\\src\\components\\store\\index.jsx",
+  "PreviewInSolutionExplorer": false
+}
