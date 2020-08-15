@@ -2,12 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\public",
-    "\\public\\Images",
     "\\src",
     "\\src\\components",
+    "\\src\\components\\cart",
     "\\src\\components\\data",
     "\\src\\components\\store"
   ],
-  "SelectedNode": "\\src\\components\\store\\index.jsx",
+  "SelectedNode": "\\src\\components\\cart\\context.js",
   "PreviewInSolutionExplorer": false
 }

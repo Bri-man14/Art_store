@@ -1,9 +1,5 @@
 const products = [
-    {
-        apiId: 'price_1HCCRNHu2oVdLeNMSH2htcbH',
-        price: 300000,
-        name: 'Rapture'
-    },
+
     {
         apiId: 'price_1HCCXKHu2oVdLeNMk44eSJkt',
         price: 300000,
@@ -14,6 +10,10 @@ const products = [
         price: 300000,
         name: 'Bliss'
     },
-
+    {
+        apiId: 'price_1HCCRNHu2oVdLeNMSH2htcbH',
+        price: 300000,
+        name: 'Rapture'
+    },
 ]
 export default products
