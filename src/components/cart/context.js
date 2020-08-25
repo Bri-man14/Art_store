@@ -6,18 +6,17 @@ export default function CartProvider({ children }) {
     const [items, setItems] = useState([])
 
     function addToCart(item) {
-      setItems(prevState =>[...prevState, item])
+        setItems(prevState => [...prevState, item])
     }
 
     return (
-      <CartContext.Provider
-        value={{
-          items,
-          addToCart
-        }}
-      >
-        {children}
-      </CartContext.Provider>
-    )
+        <CartContext.Provider
+            value={{
+                items,
+                addToCart
+            }}
+        >            
+            {children}
+        </CartContext.Provider>
+   )
 }
-
