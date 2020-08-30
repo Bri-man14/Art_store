@@ -23,11 +23,16 @@ export default function Cart({ stripeToken }) {
         stripe.redirectToCheckout({
             lineItems: ctx.items.map(item => ({
                 quantity: ctx.item.quantity,
-                price: item.price
+                price: item.apiId
+                
             })),
+            mode:'payment',
             successUrl: "https://your-website.com/success",
             cancelUrl: "https://your-website.com/canceled"
         })
+            .then(function (result) {
+
+            });
     }
     return (
         <div>
@@ -36,14 +41,14 @@ export default function Cart({ stripeToken }) {
                     <tr>
                         <th>Name</th>
                         <th>Image</th>
-                        <th>Quantity</th>
+                        <th>Quanity</th>
                         <th>Price</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    {ctx.items.map(item => (
-                        <tr>
+                    {ctx.items.map((item) => (
+                        <tr key={item.apiId}>
                             <td>{item.name}</td>
                             <td>
                                 <img
@@ -53,18 +58,18 @@ export default function Cart({ stripeToken }) {
                                 />
                             </td>
                             <td>{item.quantity}</td>
-                            <td>{formatPrice(item.price)}</td>
+                            <td>{formatPrice(item.price * item.quantity)}</td>
                         </tr>
                     ))}
                     <tr>
-                        <td style={{ textAlign: "right" }} colspan={3}>
+                        <td style={{ textAlign: "right" }} colSpan={3}>
                             Total:
             </td>
                         <td>{formatPrice(totalPrice(ctx.items))}</td>
                     </tr>
 
                     <tr>
-                        <td style={{ textAlign: "right" }} colspan={4}>
+                        <td style={{ textAlign: "right" }} colSpan={4}>
                             <button onClick={checkout}>Checkout now</button>
                         </td>
                     </tr>

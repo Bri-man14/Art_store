@@ -9,10 +9,25 @@ export default function CartProvider({ children }) {
         setItems(prevState => [...prevState, item])
     }
 
+    function itemsWithQuantities(items) {
+        return items.reduce((acc, item) => {
+            const found = acc.find(_item => _item.apiId === item.apiId)
+            if (found) {
+                found.quantity = found.quantity + 1
+            } else {
+                acc.push({
+                    quantity: 1,
+                    ...item
+                })
+            }
+            return acc
+        }, [])
+    }
+
     return (
         <CartContext.Provider
             value={{
-                items,
+                items: itemsWithQuantities(items),
                 addToCart
             }}
         >            
